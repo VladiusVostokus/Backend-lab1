@@ -6,6 +6,6 @@ COPY requirements.txt .
 
 RUN python -m pip install -r requirements.txt
 
-COPY /src /app
+COPY . /app
 
-CMD flask --app app run -h 0.0.0.0 -p $PORT
+CMD flask --app src/app run -h 0.0.0.0 -p $PORT

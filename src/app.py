@@ -1,10 +1,13 @@
 from flask import Flask
+from datetime import datetime
 
 app = Flask(__name__)
 
 @app.route("/healthcheck")
 def hello_world():
+    now = datetime.now()
+    date = now.isoformat('T')
     return {
-        "message":"I am working",
-        "status":"OK",
+        "message": date,
+        "status":"200 OK",
     }
